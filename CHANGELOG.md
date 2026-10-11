@@ -1,5 +1,11 @@
 # @himetrica/errorkit
 
+## 0.1.1
+
+### Patch Changes
+
+- 481d357: Add README with installation and usage for the browser, React, script tag, Node.js, Next.js and source map uploads.
+
 ## 0.1.0
 
 ### Minor Changes

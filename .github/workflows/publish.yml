@@ -11,6 +11,8 @@ name: Publish
 on:
   push:
     tags: ["v*"]
+  # Re-run a release by hand (Actions tab -> Publish -> Run workflow, pick the vX.Y.Z tag as ref).
+  workflow_dispatch:
 
 permissions:
   contents: read
