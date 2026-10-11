@@ -1,0 +1,73 @@
+{
+  "name": "@himetrica/errorkit",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "require": "./dist/react/index.cjs"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js",
+      "require": "./dist/core/index.cjs"
+    },
+    "./node": {
+      "types": "./dist/node/index.d.ts",
+      "import": "./dist/node/index.js",
+      "require": "./dist/node/index.cjs"
+    },
+    "./next": {
+      "types": "./dist/next/index.d.ts",
+      "edge-light": "./dist/next/index.js",
+      "worker": "./dist/next/index.js",
+      "import": "./dist/next/index.js",
+      "require": "./dist/next/index.cjs"
+    },
+    "./global": "./dist/errorkit.global.js"
+  },
+  "sideEffects": [
+    "./dist/errorkit.global.js"
+  ],
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:core": "tsup src/core/index.ts --out-dir dist/core --format esm,cjs --dts --sourcemap --no-config",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test src/core/core.test.ts src/browser/browser.test.ts src/server/server.test.ts src/browser/debug-ids.test.ts"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}
